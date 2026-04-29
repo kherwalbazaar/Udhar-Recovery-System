@@ -9,9 +9,9 @@ interface NavbarProps {
 }
 
 const bgColorsBody: Record<string, string> = {
-  home: '#f8fde8',
+  home: '#f3f7e7',
   khata: '#fce5e5',
-  collections: '#c8f9fc',
+  collections: '#dcfafb',
   add: '#f7e8fa',
 }
 
@@ -23,19 +23,19 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab, onTabChange }) => {
     {
       id: 'khata',
       title: 'Khata',
-      color: '#eb4d4b',
+      color: '#fce5e5',
       icon: <BookOpenText className="icon" />,
     },
     {
       id: 'home',
       title: 'Home',
-      color: '#6ab04c',
+      color: '#f3f7e7',
       icon: <Home className="icon" />,
     },
     {
       id: 'collections',
       title: 'Collections',
-      color: '#4834d4',
+      color: '#dcfafb',
       icon: <WalletCards className="icon" />,
     },
   ]
