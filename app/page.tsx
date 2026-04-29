@@ -580,8 +580,8 @@ export default function KherwalBazaar() {
         </div>
       </div>
 
-      {/* Blank Card - Dashboard Only */}
-      {activeTab === 'dashboard' && (
+      {/* Blank Card - Dashboard & Khata */}
+      {(activeTab === 'dashboard' || activeTab === 'khata') && (
         <div className="px-6 pb-2 -mt-6 relative z-10">
           <img src="/banner.png" alt="Banner" className="w-full rounded-2xl border-2 border-white shadow-lg" />
         </div>
