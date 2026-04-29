@@ -23,19 +23,19 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab, onTabChange }) => {
     {
       id: 'khata',
       title: 'Khata',
-      color: '#fce5e5',
+      color: '#eb4d4b',
       icon: <BookOpenText className="icon" />,
     },
     {
       id: 'home',
       title: 'Home',
-      color: '#f3f7e7',
+      color: '#6ab04c',
       icon: <Home className="icon" />,
     },
     {
       id: 'collections',
       title: 'Collections',
-      color: '#dcfafb',
+      color: '#4834d4',
       icon: <WalletCards className="icon" />,
     },
   ]
