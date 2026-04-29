@@ -31,7 +31,7 @@ export default function KherwalBazaar() {
   const renderDashboard = () => (
     <div className="flex-1 overflow-y-auto pb-20">
       {/* Total Pending Card */}
-      <div className="px-6 pb-6">
+      <div className="px-6 pt-4 pb-6">
         <div className="bg-gradient-to-br from-slate-900 to-blue-900 text-white rounded-2xl p-4 shadow-lg">
           <div className="flex justify-between items-start">
             <div>
@@ -566,7 +566,7 @@ export default function KherwalBazaar() {
       )}
 
       {/* Header */}
-      <div className="bg-gradient-to-b from-slate-900 to-blue-900 text-white px-6 py-10 relative flex justify-between items-center rounded-bl-4xl rounded-br-4xl">
+      <div className="bg-gradient-to-b from-slate-900 to-blue-900 text-white px-6 py-10 relative z-0 flex justify-between items-center rounded-bl-4xl rounded-br-4xl">
         <button onClick={() => setSidebarOpen(true)} className="hover:opacity-80 transition">
           <Menu className="w-6 h-6" />
         </button>
@@ -579,6 +579,13 @@ export default function KherwalBazaar() {
           <div className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">3</div>
         </div>
       </div>
+
+      {/* Blank Card - Dashboard Only */}
+      {activeTab === 'dashboard' && (
+        <div className="px-6 pb-2 -mt-6 relative z-10">
+          <img src="/banner.png" alt="Banner" className="w-full rounded-2xl border-2 border-white shadow-lg" />
+        </div>
+      )}
 
       {/* Content */}
       {activeTab === 'dashboard' && renderDashboard()}
