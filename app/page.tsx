@@ -5,7 +5,7 @@ import { Menu, Bell, Home, Users, Plus, TrendingDown, BarChart3, CheckCircle2, L
 import Navbar from '../components/Navbar';
 
 export default function KherwalBazaar() {
-  const [activeTab, setActiveTab] = useState('dashboard');
+  const [activeTab, setActiveTab] = useState('home');
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [customers, setCustomers] = useState([
     { id: 1, name: 'Balakram Tudu', phone: '+91 9583252256', amount: 500, status: 'Active', collection: 'Track Pants' },
@@ -551,8 +551,8 @@ export default function KherwalBazaar() {
               </button>
             </div>
             <div className="space-y-4">
-              <button onClick={() => { setActiveTab('dashboard'); setSidebarOpen(false); }} className="w-full text-left px-4 py-3 rounded-lg hover:bg-blue-50 flex items-center gap-3">
-                <Home className="w-5 h-5 text-blue-600" /> Dashboard
+              <button onClick={() => { setActiveTab('home'); setSidebarOpen(false); }} className="w-full text-left px-4 py-3 rounded-lg hover:bg-blue-50 flex items-center gap-3">
+                <Home className="w-5 h-5 text-blue-600" /> Home
               </button>
               <button onClick={() => { setActiveTab('khata'); setSidebarOpen(false); }} className="w-full text-left px-4 py-3 rounded-lg hover:bg-blue-50 flex items-center gap-3">
                 <Users className="w-5 h-5 text-blue-600" /> Khata
@@ -580,15 +580,15 @@ export default function KherwalBazaar() {
         </div>
       </div>
 
-      {/* Blank Card - Dashboard & Khata */}
-      {(activeTab === 'dashboard' || activeTab === 'khata') && (
+      {/* Blank Card - Home Only */}
+      {activeTab === 'home' && (
         <div className="px-6 pb-2 -mt-6 relative z-10">
           <img src="/banner.png" alt="Banner" className="w-full rounded-2xl border-2 border-white shadow-lg" />
         </div>
       )}
 
       {/* Content */}
-      {activeTab === 'dashboard' && renderDashboard()}
+      {activeTab === 'home' && renderDashboard()}
       {activeTab === 'khata' && renderKhata()}
       {activeTab === 'add' && renderAddCustomer()}
       {activeTab === 'collections' && renderCollections()}

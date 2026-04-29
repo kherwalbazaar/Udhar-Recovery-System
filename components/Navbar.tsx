@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useRef } from 'react'
-import { BookOpenText, LayoutDashboard, WalletCards } from 'lucide-react'
+import { BookOpenText, Home, WalletCards } from 'lucide-react'
 
 interface NavbarProps {
   activeTab: string
@@ -9,7 +9,7 @@ interface NavbarProps {
 }
 
 const bgColorsBody: Record<string, string> = {
-  dashboard: '#badc58',
+  home: '#badc58',
   khata: '#ff7979',
   collections: '#686de0',
   add: '#e056fd',
@@ -21,16 +21,16 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab, onTabChange }) => {
 
   const tabs = [
     {
-      id: 'dashboard',
-      title: 'Dashboard',
-      color: '#6ab04c',
-      icon: <LayoutDashboard className="icon" />,
-    },
-    {
       id: 'khata',
       title: 'Khata',
       color: '#eb4d4b',
       icon: <BookOpenText className="icon" />,
+    },
+    {
+      id: 'home',
+      title: 'Home',
+      color: '#6ab04c',
+      icon: <Home className="icon" />,
     },
     {
       id: 'collections',
