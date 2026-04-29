@@ -101,4 +101,3 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab, onTabChange }) => {
 }
 
 export default Navbar
-
