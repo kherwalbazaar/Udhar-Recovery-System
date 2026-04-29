@@ -9,10 +9,10 @@ interface NavbarProps {
 }
 
 const bgColorsBody: Record<string, string> = {
-  home: '#badc58',
-  khata: '#ff7979',
-  collections: '#686de0',
-  add: '#e056fd',
+  home: '#f8fde8',
+  khata: '#fce5e5',
+  collections: '#c8f9fc',
+  add: '#f7e8fa',
 }
 
 const Navbar: React.FC<NavbarProps> = ({ activeTab, onTabChange }) => {

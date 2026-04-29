@@ -1,17 +1,18 @@
 'use client';
 
 import { useState } from 'react';
-import { Menu, Bell, Home, Users, Plus, TrendingDown, BarChart3, CheckCircle2, Link2, Calendar, User2, X, ArrowLeft, Wallet, Edit2, Phone, User, FileText, Zap, AlertCircle } from 'lucide-react';
+import Image from 'next/image';
+import { Menu, Bell, Home, Users, TrendingDown, CheckCircle2, Link2, Calendar, User2, X, Wallet, Edit2, Phone, User, FileText, Zap, AlertCircle } from 'lucide-react';
 import Navbar from '../components/Navbar';
 
 export default function KherwalBazaar() {
   const [activeTab, setActiveTab] = useState('home');
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [customers, setCustomers] = useState([
+  const [customers] = useState([
     { id: 1, name: 'Balakram Tudu', phone: '+91 9583252256', amount: 500, status: 'Active', collection: 'Track Pants' },
     { id: 2, name: 'Rajesh Kumar', phone: '+91 9876543210', amount: 1000, status: 'Active', collection: 'Mobile Phone' },
   ]);
-  const [collections, setCollections] = useState([
+  const [collections] = useState([
     { id: 1, date: '28/04/26', customer: 'Balakram Tudu', amount: 150, status: 'Completed', method: 'UPI' },
     { id: 2, date: '27/04/26', customer: 'Rajesh Kumar', amount: 200, status: 'Completed', method: 'NACH' },
   ]);
@@ -583,7 +584,14 @@ export default function KherwalBazaar() {
       {/* Blank Card - Home Only */}
       {activeTab === 'home' && (
         <div className="px-6 pb-2 -mt-6 relative z-10">
-          <img src="/banner.png" alt="Banner" className="w-full rounded-2xl border-2 border-white shadow-lg" />
+          <Image
+            src="/banner.png"
+            alt="Banner"
+            width={900}
+            height={360}
+            priority
+            className="w-full rounded-2xl border-2 border-white shadow-lg"
+          />
         </div>
       )}
 
