@@ -159,6 +159,8 @@
   height: 4.5rem;
   min-width: 0;
   display: flex;
+  gap: 0.18rem;
+  flex-direction: column;
   cursor: pointer;
   position: relative;
   border-radius: 50%;
@@ -193,13 +195,24 @@
 }
 
 .icon {
-  width: 2.8em;
-  height: 2.8em;
+  width: 1.9em;
+  height: 1.9em;
   stroke: white;
   fill: transparent;
   stroke-width: 1.5pt;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+.menu__label {
+  max-width: 100%;
+  padding: 0 0.25rem;
+  color: white;
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .menu__border {

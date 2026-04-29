@@ -5,7 +5,7 @@ import { Menu, Bell, Home, Users, Plus, TrendingDown, BarChart3, CheckCircle2, L
 import Navbar from '../components/Navbar';
 
 export default function KherwalBazaar() {
-  const [activeTab, setActiveTab] = useState('home');
+  const [activeTab, setActiveTab] = useState('dashboard');
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [customers, setCustomers] = useState([
     { id: 1, name: 'Balakram Tudu', phone: '+91 9583252256', amount: 500, status: 'Active', collection: 'Track Pants' },
@@ -28,14 +28,14 @@ export default function KherwalBazaar() {
     totalAmount: 500,
   });
 
-  const renderHome = () => (
+  const renderDashboard = () => (
     <div className="flex-1 overflow-y-auto pb-20">
       {/* Total Pending Card */}
       <div className="px-6 pb-6">
         <div className="bg-gradient-to-br from-slate-900 to-blue-900 text-white rounded-2xl p-4 shadow-lg">
           <div className="flex justify-between items-start">
             <div>
-              <p className="text-sm text-gray-300 mb-2">Total Pending Amount</p>
+              <p className="text-sm text-gray-300 mb-2">Total Outstanding</p>
               <h3 className="text-3xl font-bold mb-4">₹ 1,87,500</h3>
               <div className="flex items-center gap-2 text-sm">
                 <Users className="w-4 h-4" />
@@ -63,7 +63,7 @@ export default function KherwalBazaar() {
             <div className="w-10 h-10 bg-green-500 rounded-2xl flex items-center justify-center shadow-md hover:shadow-lg transition">
               <User2 className="w-5 h-5 text-white" />
             </div>
-            <p className="text-xs font-semibold text-center text-gray-900">Add Customer</p>
+            <p className="text-xs font-semibold text-center text-gray-900">Add New Udhar</p>
           </button>
           <button onClick={() => { console.log('Payment Link button clicked'); }} className="flex flex-col items-center gap-1 cursor-pointer">
             <div className="w-10 h-10 bg-purple-500 rounded-2xl flex items-center justify-center shadow-md hover:shadow-lg transition">
@@ -77,11 +77,11 @@ export default function KherwalBazaar() {
             </div>
             <p className="text-xs font-semibold text-center text-gray-900">EMI Plans</p>
           </button>
-          <button onClick={() => { setActiveTab('customers'); }} className="flex flex-col items-center gap-1 cursor-pointer">
+          <button onClick={() => { setActiveTab('khata'); }} className="flex flex-col items-center gap-1 cursor-pointer">
             <div className="w-10 h-10 bg-blue-500 rounded-2xl flex items-center justify-center shadow-md hover:shadow-lg transition">
               <Users className="w-5 h-5 text-white" />
             </div>
-            <p className="text-xs font-semibold text-center text-gray-900">Customer</p>
+            <p className="text-xs font-semibold text-center text-gray-900">Khata</p>
           </button>
           <button onClick={() => { setActiveTab('collections'); }} className="flex flex-col items-center gap-1 cursor-pointer">
             <div className="w-10 h-10 bg-teal-500 rounded-2xl flex items-center justify-center shadow-md hover:shadow-lg transition">
@@ -141,11 +141,11 @@ export default function KherwalBazaar() {
     </div>
   );
 
-  const renderCustomers = () => (
+  const renderKhata = () => (
     <div className="flex-1 overflow-y-auto pb-20">
       <div className="bg-gradient-to-b from-slate-900 to-blue-900 text-white px-6 py-6">
-        <h2 className="text-2xl font-bold">My Customers</h2>
-        <p className="text-sm text-gray-300 mt-1">{customers.length} Total Customers</p>
+        <h2 className="text-2xl font-bold">Khata</h2>
+        <p className="text-sm text-gray-300 mt-1">{customers.length} customer ledgers</p>
       </div>
 
       <div className="p-6 space-y-4">
@@ -551,11 +551,11 @@ export default function KherwalBazaar() {
               </button>
             </div>
             <div className="space-y-4">
-              <button onClick={() => { setActiveTab('home'); setSidebarOpen(false); }} className="w-full text-left px-4 py-3 rounded-lg hover:bg-blue-50 flex items-center gap-3">
-                <Home className="w-5 h-5 text-blue-600" /> Home
+              <button onClick={() => { setActiveTab('dashboard'); setSidebarOpen(false); }} className="w-full text-left px-4 py-3 rounded-lg hover:bg-blue-50 flex items-center gap-3">
+                <Home className="w-5 h-5 text-blue-600" /> Dashboard
               </button>
-              <button onClick={() => { setActiveTab('customers'); setSidebarOpen(false); }} className="w-full text-left px-4 py-3 rounded-lg hover:bg-blue-50 flex items-center gap-3">
-                <Users className="w-5 h-5 text-blue-600" /> My Customers
+              <button onClick={() => { setActiveTab('khata'); setSidebarOpen(false); }} className="w-full text-left px-4 py-3 rounded-lg hover:bg-blue-50 flex items-center gap-3">
+                <Users className="w-5 h-5 text-blue-600" /> Khata
               </button>
               <button onClick={() => { setActiveTab('collections'); setSidebarOpen(false); }} className="w-full text-left px-4 py-3 rounded-lg hover:bg-blue-50 flex items-center gap-3">
                 <TrendingDown className="w-5 h-5 text-blue-600" /> Collections
@@ -581,8 +581,8 @@ export default function KherwalBazaar() {
       </div>
 
       {/* Content */}
-      {activeTab === 'home' && renderHome()}
-      {activeTab === 'customers' && renderCustomers()}
+      {activeTab === 'dashboard' && renderDashboard()}
+      {activeTab === 'khata' && renderKhata()}
       {activeTab === 'add' && renderAddCustomer()}
       {activeTab === 'collections' && renderCollections()}
       {activeTab === 'reports' && renderReports()}
